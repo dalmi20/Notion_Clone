@@ -16,7 +16,6 @@ export const Navigation =() =>{
     const isMobile = useMediaQuery("(max-width :768px)")
     const pathname =usePathname()
 
-    const documents= useQuery(api.documents.get)
 
     const isResizingRef =useRef(false)
     const sidebarRef = useRef <ElementRef<"aside">>(null)
@@ -136,9 +135,7 @@ export const Navigation =() =>{
                     </div>
 
                     <div className="mt-4">
-                        {documents?.map((document)=>(
-                            <p key={document._id}>{document.title}</p>
-                        ))}
+                        
                     </div>
                     <div onMouseDown={handleMouseDown}
                         onClick={resetWidth}
